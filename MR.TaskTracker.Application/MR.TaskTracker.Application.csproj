@@ -1,0 +1,49 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="FluentValidation" Version="11.4.0" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.4.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MR.TaskTracker.Domain\MR.TaskTracker.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Features\TaskAssignments\" />
+    <None Remove="Features\TaskAssignments\Commands\AddComment\" />
+    <None Remove="Features\TaskAssignments\Commands\AddAttachment\" />
+    <None Remove="Features\TaskAssignments\Commands\UpdateTaskAssignment\" />
+    <None Remove="Dtos\" />
+    <None Remove="Models\File\" />
+    <None Remove="Extensions\" />
+    <None Remove="Contracts\Identity\" />
+    <None Remove="Features\ApplicationUsers\" />
+    <None Remove="Models\Identity\" />
+    <None Remove="Features\TaskAssignments\Queries\GetAttachment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Features\TaskAssignments\" />
+    <Folder Include="Features\TaskAssignments\Commands\AddComment\" />
+    <Folder Include="Features\TaskAssignments\Commands\AddAttachment\" />
+    <Folder Include="Features\TaskAssignments\Commands\UpdateTaskAssignment\" />
+    <Folder Include="Dtos\" />
+    <Folder Include="Models\File\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Contracts\Identity\" />
+    <Folder Include="Features\ApplicationUsers\" />
+    <Folder Include="Models\Identity\" />
+    <Folder Include="Models\Identity\" />
+    <Folder Include="Features\TaskAssignments\Queries\GetAttachment\" />
+  </ItemGroup>
+</Project>
