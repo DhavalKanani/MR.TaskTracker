@@ -6,6 +6,6 @@ namespace MR.TaskTracker.Application.Features.TaskAssignments.Commands.AddAttach
 {
     public class AddAttachmentCommand : IRequest<TaskAttachmentQueryDto>
     {
-        public TaskAttachmentCommandDto taskAttachment;
+        public TaskAttachmentCommandDto TaskAttachment;
     }
 }
