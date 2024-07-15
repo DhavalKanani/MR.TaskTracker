@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MR.TaskTracker.Api</name>
+    </assembly>
+    <members>
+        <member name="M:MR.TaskTracker.Api.Controllers.ApplicationUserController.Get">
+            <summary>
+            return All employees for assigning task, self and who reports to current loggedin user
+            </summary>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.AuthController.Login(MR.TaskTracker.Application.Models.Identity.AuthRequest)">
+            <summary>
+            Login API
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.AuthController.VerifyToken(System.String)">
+            <summary>
+            API to verify token
+            </summary>
+            <param name="token"></param>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.AuthController.ChangePassword(MR.TaskTracker.Application.Models.Identity.AuthRequest)">
+            <summary>
+            change password 
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.AuthController.Register(MR.TaskTracker.Application.Models.Identity.RegistrationRequest)">
+            <summary>
+            Create new User, Only Admin can create new user
+            </summary>
+            <param name="request"></param>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.TaskAssignmentController.Get(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.DateTimeOffset})">
+            <summary>
+            Returns all Task based on three filter criteria and record visiblity
+            </summary>
+            <param name="assigneeId"></param>
+            <param name="reporterId"></param>
+            <param name="dueDate"></param>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.TaskAssignmentController.Get(System.Int32)">
+            <summary>
+            Get Task with dependent records
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.TaskAssignmentController.Post(MR.TaskTracker.Application.Features.TaskAssignments.Commands.CreateTaskAssignment.CreateTaskAssignmentCommand)">
+            <summary>
+            Create task and use get employee api to get assignee details
+            </summary>
+            <param name="taskAssignment"></param>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.TaskAssignmentController.Put(MR.TaskTracker.Application.Features.TaskAssignments.Commands.UpdateTaskAssignment.UpdateTaskAssignmentCommand)">
+            <summary>
+            update task Status or StoryPoint 
+            </summary>
+            <param name="taskAssignment"></param>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.TaskAttachmentController.Post(MR.TaskTracker.Application.Dtos.Command.TaskAttachmentCommandDto)">
+            <summary>
+            Add attachment to task
+            </summary>
+            <param name="taskattachment"></param>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.TaskAttachmentController.Get(System.Int32)">
+            <summary>
+            Download attachment
+            </summary>
+            <param name="taskAttachmentId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MR.TaskTracker.Api.Controllers.TaskCommentController.Post(MR.TaskTracker.Application.Dtos.Command.TaskCommentCommandDto)">
+            <summary>
+            Add comment to task
+            </summary>
+            <param name="taskComment"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

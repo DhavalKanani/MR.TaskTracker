@@ -1,3 +1,4 @@
+using Microsoft.OpenApi.Models;
 using MR.TaskTracker.Api.Middleware;
 using MR.TaskTracker.Application;
 using MR.TaskTracker.Identity;
@@ -24,7 +25,13 @@ builder.Services.AddCors(options =>
     .AllowAnyMethod());
 });
 
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "MR.TaskTracker APIs", Version = "v1" });
+    var filePath = Path.Combine("docs.xml");
+    c.IncludeXmlComments(filePath);
+});
+
 
 var app = builder.Build();
 

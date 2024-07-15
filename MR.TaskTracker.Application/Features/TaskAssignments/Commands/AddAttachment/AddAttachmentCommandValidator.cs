@@ -6,11 +6,10 @@ namespace MR.TaskTracker.Application.Features.TaskAssignments.Commands.AddAttach
     {
         public AddAttachmentCommandValidator()
         {
-            RuleFor(p => p.taskAttachment).NotNull();
-            RuleFor(p => p.taskAttachment.ById).NotNull();
-            RuleFor(p => p.taskAttachment.TaskAssignmentId).NotNull();
-            RuleFor(p => p.taskAttachment.Attachment).NotNull();
-
+            RuleFor(p => p.TaskAttachment).NotNull();
+            RuleFor(p => p.TaskAttachment.ById).NotNull();
+            RuleFor(p => p.TaskAttachment.TaskAssignmentId).NotNull();
+            RuleFor(p => p.TaskAttachment.Attachment).NotNull();
         }
     }
 }

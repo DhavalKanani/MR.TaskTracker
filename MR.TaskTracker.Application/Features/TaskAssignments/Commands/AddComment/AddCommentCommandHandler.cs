@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+﻿    using AutoMapper;
 using MediatR;
 using MR.TaskTracker.Application.Contracts.Persistence;
 using MR.TaskTracker.Application.Dtos.Queries;
@@ -24,9 +24,9 @@ namespace MR.TaskTracker.Application.Features.TaskAssignments.Commands.AddCommen
             if (validationResult.Errors.Any())
                 throw new BadRequestException("Invalid Task Attachment", validationResult);
 
-            var taskComment = _mapper.Map<TaskComment>(request.taskComment);
+            var taskComment = _mapper.Map<TaskComment>(request.TaskComment);
             await _taskCommentRepository.CreateAsync(taskComment);
-            return _mapper.Map<TaskCommentQueryDto>(request.taskComment);
+            return _mapper.Map<TaskCommentQueryDto>(request.TaskComment);
         }
     }
 }

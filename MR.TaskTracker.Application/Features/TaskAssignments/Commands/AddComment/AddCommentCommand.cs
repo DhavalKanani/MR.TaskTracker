@@ -8,7 +8,7 @@ namespace MR.TaskTracker.Application.Features.TaskAssignments.Commands.AddCommen
 {
     public class AddCommentCommand : IRequest<TaskCommentQueryDto>
 	{
-		public TaskCommentCommandDto taskComment;
+		public TaskCommentCommandDto TaskComment;
 	}
 }
 

@@ -16,12 +16,15 @@ namespace MR.TaskTracker.Identity.Service
     {
         private readonly JwtSettings _jwtSettings;
         private readonly IApplicationUserRepository _applicationUserRepository;
+        private readonly IUserService _userService;
 
         public AuthService(IApplicationUserRepository applicationUserRepository,
-            IOptions<JwtSettings> jwtSettings)
+            IOptions<JwtSettings> jwtSettings,
+            IUserService userService)
         {
             _applicationUserRepository = applicationUserRepository;
             _jwtSettings = jwtSettings.Value;
+            _userService = userService;
         }
 
         public async Task<AuthResponse> ChangePassword(AuthRequest request)

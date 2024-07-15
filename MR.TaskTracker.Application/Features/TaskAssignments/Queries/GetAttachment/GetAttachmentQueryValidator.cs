@@ -6,7 +6,10 @@ namespace MR.TaskTracker.Application.Features.TaskAssignments.Queries.GetAttachm
 
         public GetAttachmentQueryValidator()
         {
-            
+            RuleFor(p => p.TaskAttachmentId)
+                .NotEmpty()
+                .GreaterThan(1)
+                .WithMessage("TaskAttachmentId required");
         }
 
     }

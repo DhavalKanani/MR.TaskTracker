@@ -36,6 +36,13 @@ namespace MR.TaskTracker.Persistence.Configurations
             };
             builder.HasData(userSeed);
 
+            builder.Property(p => p.FirstName).IsRequired().HasMaxLength(20);
+            builder.Property(p => p.LastName).IsRequired().HasMaxLength(20);
+            builder.HasIndex(p => p.Email).IsUnique();
+            builder.Property(p => p.Role).IsRequired().HasMaxLength(10);
+            builder.Property(p => p.Password).IsRequired().HasMaxLength(50); ;
+            builder.Property(p => p.ReportsToId).IsRequired();
+
             builder.HasOne(p => p.ReportsTo)
                 .WithMany(a => a.Reports)
                 .HasForeignKey(p => p.ReportsToId)

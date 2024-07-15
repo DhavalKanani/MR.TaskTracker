@@ -6,10 +6,10 @@ namespace MR.TaskTracker.Application.Features.TaskAssignments.Commands.AddCommen
     {
         public AddCommentCommandValidator()
         {
-            RuleFor(p => p.taskComment).NotNull();
-            RuleFor(p => p.taskComment.ById).NotNull();
-            RuleFor(p => p.taskComment.TaskAssignmentId).NotNull();
-            RuleFor(p => p.taskComment.Comment).NotEmpty();
+            RuleFor(p => p.TaskComment).NotNull();
+            RuleFor(p => p.TaskComment.ById).NotNull();
+            RuleFor(p => p.TaskComment.TaskAssignmentId).NotNull();
+            RuleFor(p => p.TaskComment.Comment).NotEmpty();
         }
     }
 }

@@ -8,6 +8,11 @@ namespace MR.TaskTracker.Persistence.Configurations
     {
         public void Configure(EntityTypeBuilder<TaskAssignment> builder)
         {
+            builder.Property(p => p.ReporterId).IsRequired();
+            builder.Property(p => p.Title).IsRequired();
+            builder.Property(p => p.CurrentStatus).IsRequired().HasMaxLength(20);
+            builder.Property(p => p.Description).IsRequired();
+
             builder.HasMany(p => p.Actions)
                 .WithOne(a => a.TaskAssignment)
                 .HasForeignKey(p => p.TaskAssignmentId);

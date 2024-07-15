@@ -31,7 +31,7 @@ namespace MR.TaskTracker.Api.Controllers
         [HttpPost]
         public async Task<ActionResult> Post([FromForm] TaskAttachmentCommandDto taskattachment)
         {
-            var response = await _mediator.Send(new AddAttachmentCommand { taskAttachment = taskattachment});
+            var response = await _mediator.Send(new AddAttachmentCommand { TaskAttachment = taskattachment});
             return Ok(response);
         }
 

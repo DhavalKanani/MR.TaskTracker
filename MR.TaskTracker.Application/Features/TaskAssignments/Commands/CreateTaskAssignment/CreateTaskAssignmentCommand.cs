@@ -8,7 +8,7 @@ namespace MR.TaskTracker.Application.Features.TaskAssignments.Commands.CreateTas
 {
     public class CreateTaskAssignmentCommand : IRequest<TaskAssignmentQueryDto>
 	{
-        public TaskAssignmentCommandDto taskAssignment { get; set; }
+        public TaskAssignmentCommandDto TaskAssignment { get; set; }
     }
 }
 

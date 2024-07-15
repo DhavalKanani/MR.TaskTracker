@@ -29,7 +29,7 @@ namespace MR.TaskTracker.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<List<ApplicationUserQueryDto>>> Post(TaskCommentCommandDto taskComment)
         {
-            var response = await _mediator.Send(new AddCommentCommand { taskComment = taskComment});
+            var response = await _mediator.Send(new AddCommentCommand { TaskComment = taskComment});
             return Ok(response);
         }
     }

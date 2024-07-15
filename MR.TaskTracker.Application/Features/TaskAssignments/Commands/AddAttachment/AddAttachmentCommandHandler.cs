@@ -27,16 +27,16 @@ namespace MR.TaskTracker.Application.Features.TaskAssignments.Commands.AddAttach
             if (validationResult.Errors.Any())
                 throw new BadRequestException("Invalid Task Attachment", validationResult);
 
-            var taskAttachment = _mapper.Map<TaskAttachment>(request.taskAttachment);
+            var taskAttachment = _mapper.Map<TaskAttachment>(request.TaskAttachment);
 
-            var file = await request.taskAttachment.Attachment.ToFileModel();
+            var file = await request.TaskAttachment.Attachment.ToFileModel();
             taskAttachment.Content = file.Content;
             taskAttachment.FileName = file.FileName;
             taskAttachment.Length = file.Length;
 
             await _taskAttachmentRepository.CreateAsync(taskAttachment);
 
-            return _mapper.Map<TaskAttachmentQueryDto>(request.taskAttachment);
+            return _mapper.Map<TaskAttachmentQueryDto>(request.TaskAttachment);
         }
     }
 }
