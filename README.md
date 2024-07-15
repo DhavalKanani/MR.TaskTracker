@@ -10,6 +10,7 @@ Importatn nuget packages :
 DB Diagram: 
 ![MR TaskTracker](https://github.com/user-attachments/assets/bc0905a3-a34c-466f-8094-6035640ed4c9)
 
-
+Swagger:
+[MR.TaskTracker swagger.json](https://github.com/user-attachments/files/16231473/MR.TaskTracker.swagger.json)
 
 Note: this project contains appsettings.Development.json file for reference
